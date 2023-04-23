@@ -1,0 +1,6 @@
+flask
+numpy
+pandas
+underthesea
+gensim==3.8.3
+tensorflow==2.5.0

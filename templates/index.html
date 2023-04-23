@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vietnamese Sentiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/993/993688.png">
+</head>
+
+<body>
+    <form method="POST" action="/api/sender">
+        <textarea name="text" placeholder="Say Something: ..." rows="10" cols="106"></textarea>
+        <input class="submit" type="submit">
+    </form>
+    <br><br>
+    <div>
+        <h2>{{ text }}</h2>
+        {% if sentiment == 0 %}
+            <div style="text-align:center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1791/1791385.png" alt="Neutral"><p>Neutral</p>
+            </div>
+        {% elif sentiment == 1 %}
+            <div style="text-align:center">
+                <img src="https://cdn-icons-png.flaticon.com/512/354/354507.png" alt="Positive"><p>Positive</p>
+            </div>
+        {% elif sentiment == 2 %}
+            <div style="text-align:center">
+                <img src="https://cdn-icons-png.flaticon.com/512/260/260222.png" alt="Negative"><p>Negative</p>
+            </div>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
